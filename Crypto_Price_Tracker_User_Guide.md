@@ -252,7 +252,7 @@ To ensure the security of your Binance account and data:
 
 - Use read-only API keys whenever possible.
 - Regularly rotate your API keys (e.g., every 3-6 months).
-- Set IP restrictions on your API key if supported by Binance.
+- Set IP restrictions on your API key if possible.
 - Never share your API keys or secrets with anyone.
 - Monitor your API key usage regularly for any suspicious activity.
 
