@@ -225,13 +225,8 @@ class WebSocketHandler:
 
 # Example usage
 if __name__ == "__main__":
-    import asyncio
     from api_client import BinanceAPIClient
-    from price_tracker import PriceTracker
     from notification import EmailNotificationHandler
-    from alert_manager import AlertManager
-    import logging
-    from websockets.exceptions import ConnectionClosed
 
     logging.basicConfig(level=logging.INFO)
     logger = logging.getLogger(__name__)

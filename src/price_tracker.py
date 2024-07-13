@@ -167,7 +167,6 @@ class PriceTracker:
 
 # Example usage
 if __name__ == "__main__":
-    import asyncio
     from api_client import BinanceAPIClient
     from config import get_config
 
