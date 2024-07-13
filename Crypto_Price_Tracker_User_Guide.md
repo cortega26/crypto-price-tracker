@@ -208,19 +208,19 @@ The Crypto Price Tracker sends several types of notifications:
 
 ## 8. FAQ
 
-Q: How often does the tracker update prices?
+Q: How often does the tracker update prices?  
 A: The tracker receives real-time updates from Binance's WebSocket API, so prices are updated almost instantly.
 
-Q: Can I track cryptocurrencies from exchanges other than Binance?
+Q: Can I track cryptocurrencies from exchanges other than Binance?  
 A: Currently, the tracker only supports Binance. Support for other exchanges may be added in future versions.
 
-Q: Is my API key and other sensitive information safe?
+Q: Is my API key and other sensitive information safe?  
 A: Yes, sensitive information like your API key and email password are stored securely using your system's keyring, not in plain text.
 
-Q: Can I run the tracker on a server or Raspberry Pi?
+Q: Can I run the tracker on a server or Raspberry Pi?  
 A: Yes, as long as the system meets the requirements and has Python installed, you can run the tracker on various platforms.
 
-Q: What happens if my internet connection drops?
+Q: What happens if my internet connection drops?  
 A: The tracker will attempt to reconnect automatically. If it can't reconnect, it will log the error and exit.
 
 ## 9. Security Considerations
