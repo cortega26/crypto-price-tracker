@@ -31,6 +31,10 @@ def load_secure_config(config: Config):
 
 
 def run_main_script(main_script):
+    expected_path = os.path.join(src_path, "main.py")
+    if os.path.normpath(main_script) != os.path.normpath(expected_path):
+        raise ValueError("Unexpected main script path")
+
     process = subprocess.Popen([sys.executable, main_script])
 
     def signal_handler(sig, frame):
