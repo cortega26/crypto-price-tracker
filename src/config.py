@@ -65,7 +65,7 @@ class Config(BaseSettings):
     @field_validator("EMAIL_ADDRESS")
     @classmethod
     def valid_email(cls, v: str) -> str:
-        if v and not re.fullmatch(r"(^([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(\.[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+)*)\@([a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,})$", v):
+        if v and not re.fullmatch(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$", v):
             raise ValueError("Invalid email address")
         return v
 

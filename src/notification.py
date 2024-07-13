@@ -44,7 +44,7 @@ class EmailNotificationHandler(NotificationHandler):
         self.secondary_email_host = "smtp.secondary.com"
         self.secondary_email_port = 587
         self.smtp_client = None
-        
+
         # Log the email configuration
         logger.debug(f"Email Host: {self.email_config.EMAIL_HOST}")
         logger.debug(f"Email Port: {self.email_config.EMAIL_PORT}")
@@ -110,9 +110,9 @@ class EmailNotificationHandler(NotificationHandler):
             raise ValueError("Email password is not set in keyring")
 
         try:
-            async with aiosmtplib.SMTP(hostname=self.email_config.EMAIL_HOST, 
-                                    port=self.email_config.EMAIL_PORT, 
-                                    use_tls=False, 
+            async with aiosmtplib.SMTP(hostname=self.email_config.EMAIL_HOST,
+                                    port=self.email_config.EMAIL_PORT,
+                                    use_tls=False,
                                     tls_context=context) as smtp:
                 await smtp.ehlo()
                 if smtp.server_auth_methods:
@@ -158,8 +158,8 @@ class EmailNotificationHandler(NotificationHandler):
 
         try:
             async with aiosmtplib.SMTP(hostname=self.secondary_email_host, 
-                                    port=self.secondary_email_port, 
-                                    use_tls=False, 
+                                    port=self.secondary_email_port,
+                                    use_tls=False,
                                     tls_context=context) as smtp:
                 await smtp.ehlo()
                 if smtp.server_auth_methods:
