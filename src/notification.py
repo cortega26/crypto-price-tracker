@@ -36,7 +36,6 @@ class NotificationHandler(ABC):
         Raises:
             NotImplementedError: If the method is not implemented by a subclass.
         """
-        pass
 
 class EmailNotificationHandler(NotificationHandler):
     def __init__(self, email_config: Config):
