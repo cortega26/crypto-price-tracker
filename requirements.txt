@@ -1,0 +1,6 @@
+aiosmtplib
+cachetools
+websockets
+python-binance
+pydantic-settings
+keyring
