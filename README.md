@@ -12,29 +12,6 @@ Crypto Price Tracker is a comprehensive tool designed to monitor cryptocurrency 
 - User-friendly GUI for easy configuration
 - Robust error handling and automatic reconnection for WebSocket streams
 
-## Project Structure
-
-```python
-crypto-price-tracker/
-│
-├── src/
-│   ├── __init__.py
-│   ├── main.py
-│   ├── config.py
-│   ├── api_client.py
-│   ├── price_tracker.py
-│   ├── alert_manager.py
-│   ├── notification.py
-│   ├── websocket_handler.py
-│   └── gui.py
-│
-├── Crypto_Price_Tracker_User_Guide.md
-├── LICENSE
-├── run.py
-├── requirements.txt
-└── README.md
-```
-
 ## Installation
 
 1. Clone the repository:
