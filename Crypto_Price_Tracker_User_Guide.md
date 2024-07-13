@@ -232,7 +232,7 @@ A: The tracker will attempt to reconnect automatically. If it can't reconnect, i
 
 ## 10. Support and Community
 
-This Crypto Price Tracker is an open-source project maintained by a single developer. While direct support is limited, there are several ways to get help, report issues, or contribute to the project:
+This Crypto Price Tracker is an open-source project maintained by a single developer (me). While direct support is limited, there are several ways to get help, report issues, or contribute to the project:
 
 1. **GitHub Issues**: If you encounter bugs or have feature requests, please open an issue on the project's GitHub repository. This allows for tracking and public discussion of the topic.
 
