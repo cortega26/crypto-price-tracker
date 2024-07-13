@@ -31,7 +31,6 @@ class PriceTrackerGUI(tk.Tk):
         self.title("Crypto Price Tracker Configuration")
         self.geometry("500x670")
         self.resizable(False, False)
-
         self.config = configparser.ConfigParser()
         self.api_vars: Dict[str, tk.StringVar] = self._create_string_vars(
             ["API_KEY", "API_SECRET"]
@@ -54,15 +53,10 @@ class PriceTrackerGUI(tk.Tk):
                 "PERCENTAGE_CHANGE_TIMEFRAME",
             ]
         )
-
         self.help_texts: Dict[str, str] = self._load_help_texts()
-
         self.create_widgets()
         self.load_existing_config()
-
         self.config_saved = False
-
-        # Bind the window close event
         self.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     def _create_string_vars(self, keys: list[str]) -> Dict[str, tk.StringVar]:
@@ -409,21 +403,18 @@ class PriceTrackerGUI(tk.Tk):
                 ),
             }
 
-            # Save sensitive data to keyring
             for key in SECURE_KEYS:
                 if config_dict[key]:
                     keyring.set_password(APP_NAME, key, config_dict[key])
-                    config_dict[key] = None  # Remove sensitive data from config_dict
+                    config_dict[key] = None
 
             new_config = Config(**config_dict)
-
-            # Save non-sensitive data to .env file
             new_config.save_to_env_file()
 
             self._show_status("Configuration saved successfully", "info")
             logging.info("Configuration saved successfully")
             self.config_saved = True
-            self.after(100, self.destroy)  # Close the GUI after saving
+            self.after(100, self.destroy)
         except Exception as e:
             error_message = f"An error occurred while saving: {str(e)}"
             logging.error(error_message)

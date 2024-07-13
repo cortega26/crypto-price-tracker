@@ -45,16 +45,24 @@ class EmailNotificationHandler(NotificationHandler):
         self.secondary_email_port = 587
         self.smtp_client = None
 
-        # Log the email configuration
         logger.debug(f"Email Host: {self.email_config.EMAIL_HOST}")
         logger.debug(f"Email Port: {self.email_config.EMAIL_PORT}")
         logger.debug(f"Email Address: {self.email_config.EMAIL_ADDRESS}")
 
-        # Check if email password is set in keyring
         email_password = keyring.get_password(APP_NAME, "EMAIL_PASSWORD")
         logger.debug(f"Email Password retrieved from keyring: {'Yes' if email_password else 'No'}")
 
     async def send_notification(self, subject: str, body: str) -> None:
+        """
+        Handles email notifications including creation, sending, retries, and closing connections.
+
+        Args:
+            subject (str): The subject of the email notification.
+            body (str): The body content of the email notification.
+
+        Raises:
+            Exception: If an error occurs during the email sending process.
+        """
         current_time = time.time()
         if (
             subject in self.last_notification_time
@@ -101,6 +109,18 @@ class EmailNotificationHandler(NotificationHandler):
         return msg
 
     async def _send_email(self, msg: MIMEMultipart) -> None:
+        """
+        Sends an email message with the provided subject, body, and recipients.
+
+        Args:
+            msg (MIMEMultipart): The MIME message to be sent.
+
+        Raises:
+            ValueError: If the email password is not set in the keyring.
+            aiosmtplib.SMTPException: If there is an SMTP-related error.
+            ssl.SSLError: If there is an SSL-related error.
+            Exception: If there is an unexpected error sending the email.
+        """
         logger.debug("Attempting to send email...")
         context = ssl.create_default_context()
         
@@ -148,6 +168,18 @@ class EmailNotificationHandler(NotificationHandler):
         await asyncio.sleep(retry_delay)
 
     async def _send_via_secondary_server(self, msg: MIMEMultipart) -> None:
+        """
+        Attempt to send an email message via the secondary email server.
+
+        Parameters:
+        - msg (MIMEMultipart): The MIME multipart message to be sent.
+
+        Raises:
+        - ValueError: If the email password is not set in the keyring.
+        - aiosmtplib.SMTPException: If there is an SMTP error on the secondary server.
+        - ssl.SSLError: If there is an SSL error on the secondary server.
+        - Exception: If there is an unexpected error sending the email via the secondary server.
+        """
         logger.debug("Attempting to send via secondary server...")
         context = ssl.create_default_context()
         
@@ -182,6 +214,9 @@ class EmailNotificationHandler(NotificationHandler):
             raise
 
     async def close(self):
+        """
+        Close the Email Notification Handler.
+        """
         logger.info("Closing Email Notification Handler...")
         try:
             if self.smtp_client and self.smtp_client.is_connected:
