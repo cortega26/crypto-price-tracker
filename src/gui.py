@@ -262,11 +262,10 @@ class PriceTrackerGUI(tk.Tk):
         """Load config values into GUI fields."""
         for key in SECURE_KEYS:
             value = keyring.get_password(APP_NAME, key) or getattr(config, key) or ""
-            (
+            if key in self.api_vars:
                 self.api_vars[key].set(value)
-                if key in self.api_vars
-                else self.email_vars[key].set(value)
-            )
+            else:
+                self.email_vars[key].set(value)
 
         self.email_vars["EMAIL_HOST"].set(config.EMAIL_HOST)
         self.email_vars["EMAIL_PORT"].set(str(config.EMAIL_PORT))
