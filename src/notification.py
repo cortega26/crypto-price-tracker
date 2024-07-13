@@ -198,8 +198,6 @@ class EmailNotificationHandler(NotificationHandler):
 
 # Example usage
 if __name__ == "__main__":
-    import asyncio
-
     async def test_email_notification():
         config = get_config()
         email_handler = EmailNotificationHandler(config)
