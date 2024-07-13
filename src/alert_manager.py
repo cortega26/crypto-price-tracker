@@ -165,7 +165,6 @@ class AlertManager:
 
 # Example usage
 if __name__ == "__main__":
-    import asyncio
     from notification import EmailNotificationHandler
 
     async def test_alert_manager():

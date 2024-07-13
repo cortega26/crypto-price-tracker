@@ -188,8 +188,6 @@ class BinanceAPIClient(APIClient):
 
 # Example usage
 if __name__ == "__main__":
-    import asyncio
-
     async def test_api_client():
         client = BinanceAPIClient(config.API_KEY, config.API_SECRET)
         symbol = "BTCUSDT"

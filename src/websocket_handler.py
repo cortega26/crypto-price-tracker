@@ -266,7 +266,7 @@ if __name__ == "__main__":
         try:
             async with websockets.connect(uri) as websocket:
                 logger.info("WebSocket connection established")
-                
+
                 # Set a timeout for the WebSocket handler
                 try:
                     await asyncio.wait_for(websocket_handler.handle_websocket(websocket), timeout=60)
