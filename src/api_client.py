@@ -32,7 +32,6 @@ class APIClient(ABC):
         Returns:
             Dict: A dictionary containing the symbol and its historical price data.
         """
-        pass
 
     @abstractmethod
     async def get_current_price(self, symbol: str) -> float:
@@ -45,7 +44,6 @@ class APIClient(ABC):
         Returns:
             float: The current price of the symbol.
         """
-        pass
 
     @abstractmethod
     async def is_symbol_trading(self, symbol: str) -> bool:
@@ -58,7 +56,6 @@ class APIClient(ABC):
         Returns:
             bool: True if the symbol is trading, False otherwise.
         """
-        pass
 
 
 class BinanceAPIClient(APIClient):
