@@ -210,7 +210,7 @@ class PriceTrackerGUI(tk.Tk):
         ]:
             return lambda x: x.replace(".", "", 1).isdigit()
         elif label == "EMAIL_ADDRESS":
-            return lambda x: re.match(r"[^@]+@[^@]+\.[^@]+", x) is not None
+            return lambda x: re.match(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$", x) is not None
         elif label == "DAILY_DIGEST_TIME":
             return lambda x: re.match(r"^([01]\d|2[0-3]):([0-5]\d)$", x) is not None
         return None
