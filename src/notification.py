@@ -195,6 +195,7 @@ class EmailNotificationHandler(NotificationHandler):
             self.smtp_client = None
             logger.info("Email Notification Handler closed")
 
+
 # Example usage
 if __name__ == "__main__":
     async def test_email_notification():
