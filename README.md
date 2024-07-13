@@ -103,6 +103,23 @@ Contributions to the Crypto Price Tracker are welcome! Please feel free to submi
 
 This project is licensed under the Apache License - see the LICENSE file for details.
 
+## Support the Project
+
+If you find this project helpful and want to support its development, consider buying me a coffee! Your support helps maintain and improve the Crypto Price Tracker.
+
+### Buy Me a Coffee
+
+[![Buy Me A Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://www.buymeacoffee.com/cortega26)
+
+### Other Ways to Support
+
+- Star this repository
+- Share the project with others
+- Contribute to the codebase
+- Report bugs or suggest new features
+
+Your support, in any form, is greatly appreciated! Thank you for helping make this project better.
+
 ## Disclaimer
 
 This tool is for educational and informational purposes only. Cryptocurrency trading involves significant risk. Always do your own research before making any trading decisions.
