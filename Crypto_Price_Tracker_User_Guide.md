@@ -21,6 +21,8 @@
   - [8. FAQ](#8-faq)
   - [9. Security Considerations](#9-security-considerations)
   - [10. Support and Community](#10-support-and-community)
+  - [11. API Key Security Best Practices](#11-api-key-security-best-practices)
+  - [12. Using Logs for Troubleshooting](#12-using-logs-for-troubleshooting)
 
 ## 1. Introduction
 
@@ -28,13 +30,13 @@ Welcome to the Crypto Price Tracker! This application allows you to monitor cryp
 
 ## 2. System Requirements
 
-- Python 3.8 or higher
+- Python 3.9 or higher
 - Internet connection
 - Windows, macOS, or Linux operating system
 
 ## 3. Installation
 
-1. Download the Crypto Price Tracker from [insert download link].
+1. Download the Crypto Price Tracker from <https://github.com/cortega26/crypto-price-tracker.git>.
 2. Unzip the file to your desired location.
 3. Open a terminal or command prompt.
 4. Navigate to the unzipped folder:
@@ -86,7 +88,6 @@ Welcome to the Crypto Price Tracker! This application allows you to monitor cryp
 #### Binance API Configuration
 
 - **API Key**: Your Binance API key.
-
   - How to get it: Log in to your Binance account, go to "API Management", and create a new API key.
   - Keep this key secret and never share it with anyone.
 
@@ -177,15 +178,10 @@ You can run the Crypto Price Tracker in two ways:
 The Crypto Price Tracker sends several types of notifications:
 
 1. **Price Movement Alerts**: Sent when a tracked cryptocurrency's price changes by more than the specified notification threshold within the percentage change timeframe.
-
 2. **All-Time High (ATH) Alerts**: Sent when a tracked cryptocurrency reaches a new all-time high price.
-
 3. **All-Time Low (ATL) Alerts**: Sent when a tracked cryptocurrency reaches a new all-time low price.
-
 4. **90-Day High Alerts**: Sent when a tracked cryptocurrency reaches its highest price in the last 90 days.
-
 5. **90-Day Low Alerts**: Sent when a tracked cryptocurrency reaches its lowest price in the last 90 days.
-
 6. **Daily Digest**: A summary of the day's significant price movements, sent at the time specified in your configuration.
 
 ## 7. Troubleshooting
@@ -236,7 +232,7 @@ A: The tracker will attempt to reconnect automatically. If it can't reconnect, i
 
 ## 10. Support and Community
 
-This Crypto Price Tracker is an open-source project maintained by a single developer (me). While direct support is limited, there are several ways to get help, report issues, or contribute to the project:
+This Crypto Price Tracker is an open-source project maintained by a single developer. While direct support is limited, there are several ways to get help, report issues, or contribute to the project:
 
 1. **GitHub Issues**: If you encounter bugs or have feature requests, please open an issue on the project's GitHub repository. This allows for tracking and public discussion of the topic.
 
@@ -244,10 +240,29 @@ This Crypto Price Tracker is an open-source project maintained by a single devel
 
 3. **Community Discussions**: Feel free to start or join discussions in the GitHub Discussions section of the repository. This is a great place to ask questions, share experiences, or suggest improvements.
 
-4. **Contributing**: If you have ideas for improvements or bug fixes, contributions via pull requests are welcome! Please refer to the CONTRIBUTING.md file in the repository for guidelines.
+4. **Contributing**: If you have ideas for improvements or bug fixes, contributions via pull requests are welcome!
 
-5. **Stack Overflow**: For general programming questions related to the technologies used in this project, Stack Overflow can be a valuable resource. Use relevant tags like 'python', 'cryptocurrency', or 'binance-api'.
+5. **Stack Overflow**: For general programming questions related to the technologies used in this project, Stack Overflow can be a valuable resource. Use relevant tags like "python", "cryptocurrency", or "binance-api".
 
 Remember, as an open-source project, the Crypto Price Tracker thrives on community involvement. Your feedback, bug reports, and contributions help improve the tool for everyone.
+
+## 11. API Key Security Best Practices
+
+To ensure the security of your Binance account and data:
+
+- Use read-only API keys whenever possible.
+- Regularly rotate your API keys (e.g., every 3-6 months).
+- Set IP restrictions on your API key if supported by Binance.
+- Never share your API keys or secrets with anyone.
+- Monitor your API key usage regularly for any suspicious activity.
+
+## 12. Using Logs for Troubleshooting
+
+The price_tracker_gui.log file contains detailed information about the application's operation. To use it for troubleshooting:
+
+1. Open the log file in a text editor.
+2. Look for entries marked "ERROR" or "WARNING".
+3. Check the timestamps to correlate log entries with observed issues.
+4. If reporting an issue, include relevant log excerpts (make sure to remove any sensitive information).
 
 Thank you for your interest in the Crypto Price Tracker!
