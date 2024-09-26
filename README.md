@@ -109,6 +109,9 @@ If you find this project helpful and want to support its development, consider b
 
 ### Buy Me a Coffee
 
+<a href="https://www.buymeacoffee.com/cortega26">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="150">
+</a>
 [![Buy Me A Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://www.buymeacoffee.com/cortega26)
 
 ### Other Ways to Support
