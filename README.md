@@ -1,8 +1,37 @@
+<div align="center">
+
 # Crypto Price Tracker
 
-## Overview
+<p><strong>Watch the market without watching a chart all day.</strong></p>
+<p>Real-time Binance price streams, configurable thresholds, email alerts and daily summaries in a local Python app.</p>
 
-Crypto Price Tracker is a comprehensive tool designed to monitor cryptocurrency prices in real-time, provide alerts for significant price movements, and deliver daily summaries of market activity. This project utilizes the Binance WebSocket API to stream live price data and offers customizable alerts and notifications.
+[![GitHub stars](https://img.shields.io/github/stars/cortega26/crypto-price-tracker?style=flat&logo=github)](https://github.com/cortega26/crypto-price-tracker/stargazers)
+[![Last commit](https://img.shields.io/github/last-commit/cortega26/crypto-price-tracker)](https://github.com/cortega26/crypto-price-tracker/commits/main)
+[![License: Apache](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+
+</div>
+
+## Set the conditions. Let the tracker watch.
+
+Crypto Price Tracker is built for a simple job: **keep a live connection to the prices you care about and interrupt you only when your rules say something matters.**
+
+| Instead of… | You get… |
+|:---|:---|
+| Refreshing exchange pages | Binance WebSocket streaming |
+| Remembering thresholds | Configurable price alerts |
+| Missing moves while away | Email notifications |
+| Manually checking daily movement | Daily market summaries |
+| Restarting after network hiccups | Automatic reconnect with exponential backoff |
+| Hand-editing config files | GUI-based setup |
+
+```bash
+git clone https://github.com/cortega26/crypto-price-tracker.git
+cd crypto-price-tracker
+pip install -r requirements.txt
+python run.py
+```
+
+> **Scope:** this is a monitoring and alerting tool, not a trading bot. It does not replace your own risk management or investment judgment.
 
 ## Features
 
